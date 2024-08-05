@@ -1,0 +1,521 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    background-color: black;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.Menus {
+    display: flex;
+    list-style: none;
+}
+
+.Menus li {
+    margin: 10px;
+}
+
+.Menus li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.myname {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* ปรับขนาดของกล่องตามเนื้อหา */
+    text-align: center;
+    margin-top: 20px; /* ปรับค่าตามต้องการเพื่อขยับขึ้น */
+    line-height: 1.2;
+    padding: 10px; /* เพิ่ม padding ตามต้องการ */
+}
+
+.title {
+    font-size: 9em; /* ขนาดของคำว่า Phuchit */
+    margin: 0;
+    letter-spacing: 0.1em;
+}
+
+.subtitle {
+    font-size: 1.2em; /* ขนาดของคำว่า Website Developer */
+    font-family: 'Roboto', sans-serif; /* ใช้ฟอนต์ Roboto */
+    margin: 0;
+    letter-spacing: 1.09em;
+}
+
+.main {
+    padding-top: 20px; /* ปรับค่าตามต้องการเพื่อขยับขึ้น */
+    
+}
+
+.main img {
+        width: px; /* กำหนดความกว้างตามต้องการ */
+        height: auto; /* ให้ความสูงปรับตามสัดส่วนของรูปภาพ */
+}
+
+@import url("http://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+
+.box {
+    display: flex; /* ใช้ Flexbox เพื่อจัดเรียงองค์ประกอบภายในแนวนอน */
+    justify-content: space-around; /* จัดการเว้นระยะห่างระหว่างการ์ด */
+    flex-wrap: wrap; /* ทำให้การ์ดที่เกินมาจากความกว้างของหน้าจอไปแสดงในบรรทัดใหม่ */
+}
+
+.card {
+    background: #fff; /* สีพื้นหลังการ์ด */
+    border: 1px solid #ddd; /* เส้นขอบการ์ด */
+    border-radius: 10px; /* มุมโค้งของการ์ด */
+    width: 300px; /* กำหนดความกว้างของการ์ด */
+    margin: 10px; /* เพิ่มช่องว่างระหว่างการ์ด */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาของการ์ด */
+    text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+    overflow: hidden; /* ซ่อนส่วนที่เกินของการ์ด */
+    position: relative; /* กำหนด position สำหรับ pseudo-element */
+    transition: transform 0.2s, box-shadow 0.2s; /* เพิ่มการเปลี่ยนแปลงสำหรับเอฟเฟกต์ */
+}
+
+.card::before {
+    content: ''; /* ไม่มีเนื้อหา */
+    position: absolute; /* ทำให้ pseudo-element อยู่ในตำแหน่งที่สัมพันธ์กับการ์ด */
+    top: -15px; /* เลื่อนขึ้นบนเล็กน้อย */
+    left: -15px; /* เลื่อนไปทางซ้ายเล็กน้อย */
+    right: -15px; /* เลื่อนไปทางขวาเล็กน้อย */
+    bottom: -15px; /* เลื่อนลงล่างเล็กน้อย */
+    border: 4px solid black; /* กรอบสีดำหนาขึ้น */
+    transform: rotate(4deg); /* หมุนกรอบเล็กน้อย */
+    opacity: 0; /* ซ่อนกรอบ */
+    transition: opacity 0.2s, transform 0.2s; /* เพิ่มการเปลี่ยนแปลงสำหรับการแสดงกรอบ */
+}
+
+.card:hover::before {
+    opacity: 1; /* แสดงกรอบเมื่อโฮเวอร์ */
+    transform: rotate(4deg) scale(1.05); /* หมุนและขยายกรอบเมื่อโฮเวอร์ */
+}
+
+.card:hover {
+    transform: scale(1.05); /* ขยายการ์ดเมื่อโฮเวอร์ */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อโฮเวอร์ */
+}
+
+.card:active {
+    transform: scale(0.95); /* ย่อขนาดการ์ดเมื่อคลิก */
+}
+
+.card .image img {
+    width: 100%; /* ทำให้รูปภาพเต็มความกว้างของการ์ด */
+    height: 200px; /* กำหนดความสูงของรูปภาพ */
+    object-fit: cover; /* ทำให้รูปภาพครอบคลุมขนาดที่กำหนดโดยไม่บิดเบี้ยว */
+}
+
+.card .detail {
+    padding: 15px; /* เพิ่ม padding ภายในการ์ด */
+}
+
+.card .detail h2 {
+    font-size: 1.2em; /* ขนาดตัวอักษรของหัวข้อ */
+    margin: 10px 0; /* เพิ่ม margin บนและล่าง */
+}
+
+.card .detail span {
+    color: #888; /* สีตัวอักษรของข้อความ */
+}
+
+
+.box-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card {
+    cursor: pointer; /* ทำให้เมาส์เป็นรูปมือเมื่อโฮเวอร์การ์ด */
+}
+
+.box-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card .image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card .detail {
+    padding: 15px;
+}
+
+.card .detail h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.card .detail span {
+    color: #888;
+}
+
+
+
+.Abox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Change from relative to absolute */
+    top: 30px; /* Adjust this value to move the text down */
+    width: 100%;
+    text-align: center;
+}
+
+.detail1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ครอบคลุมเต็มความสูงของหน้าจอ */
+}
+
+.text-box {
+    background-color: #f7eae8; /* สีพื้นหลังของกล่อง */
+    padding: 20px; /* ระยะห่างภายในกล่อง */
+    border-radius: 10px; /* มุมกล่องโค้ง */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    position: relative; /* ใช้ relative เพื่อให้สามารถปรับตำแหน่งโดยใช้ top, bottom, left, right ได้ */
+    top: 30px; /* เลื่อนกล่องลง 30px */
+    width: 100%; /* ความกว้างของกล่องเป็น 80% ของ container */
+    max-width: 600px; /* ความกว้างสูงสุดของกล่อง */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาของกล่อง */
+}
+
+ /* detail long start */
+ .containerr {
+    display: flex;
+}
+
+.sidebar {
+    background-color: #f5f4f4;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic img {
+    width: 100%;
+    /* border-radius: 50%;  // ลบบรรทัดนี้ออก */
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    color: #777;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin: 10px 0;
+}
+
+.contact-info ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.download-cv {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-me,
+.what-my-interests {
+    margin-bottom: 40px;
+}
+
+.about-me h2,
+.what-im-doing h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.service {
+    background-color: #fff;
+    flex: 1 1 calc(50% - 20px);
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.service h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* detail long End */
+
+/* Experience */
+
+.experience-item {
+    display: flex; /* จัดเรียงรูปภาพและข้อความในแนวนอน */
+    align-items: flex-start; /* จัดตำแหน่งข้อความที่ด้านบน */
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.experience-content {
+    flex: 1; /* ให้เนื้อหาขยายเต็มพื้นที่ที่มีอยู่ */
+    padding-right: 20px; /* เพิ่มระยะห่างระหว่างเนื้อหาและรูปภาพ */
+}
+
+.experience-image {
+    flex: 0 0 200px; /* กำหนดความกว้างของคอลัมน์รูปภาพ */
+}
+
+.experience-image img {
+    width: 100%; /* ทำให้รูปภาพเต็มความกว้างที่กำหนด */
+    height: auto; /* ปรับความสูงของรูปภาพตามอัตราส่วน */
+    border-radius: 10px; /* ทำมุมโค้งให้รูปภาพ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาของรูปภาพ */
+}
+
+/* Skill */
+
+.skills {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.skills-box {
+    display: flex;
+    flex-wrap: wrap; /* จัดเรียงในรูปแบบหลายบรรทัด */
+    gap: 20px; /* ระยะห่างระหว่างกล่อง */
+    justify-content: space-around; /* จัดกล่องให้มีระยะห่างเท่ากัน */
+}
+
+.skill-item {
+    flex: 1 1 200px; /* กำหนดขนาดขั้นต่ำและการขยายของกล่อง */
+    min-width: 200px; /* ความกว้างขั้นต่ำของกล่อง */
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* การเปลี่ยนแปลงแบบนุ่มนวล */
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-item h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #007bff; /* สีของหัวข้อกล่อง */
+    text-align: center;
+}
+
+.skill-item ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.skill-item ul li {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.skill-item::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background: linear-gradient(45deg, rgba(0, 123, 255, 0.1), rgba(0, 123, 255, 0.3));
+    transition: transform 0.4s ease;
+    transform: rotate(-15deg) translateY(-100%);
+    z-index: 0;
+}
+
+.skill-item:hover::before {
+    transform: rotate(-15deg) translateY(0%);
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.skill-item * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Skill */
+
+/* Experience */
+
+/* Project */
+
+.project {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.project h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 280px;
+    max-width: 400px;
+    position: relative;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.project-image-slider {
+    position: relative;
+    overflow: hidden;
+    height: 200px; /* หรือความสูงที่ต้องการ */
+}
+
+.project-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ทำให้ภาพเต็มกล่อง */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.project-image.active {
+    opacity: 1;
+}
+
+.project-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.project-content h3 {
+    font-size: 20px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.project-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.project-link {
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #0056b3;
+}
+
+/* Project */
